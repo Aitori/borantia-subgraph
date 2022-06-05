@@ -1,6 +1,6 @@
-type ExampleEntity @entity {
+type BorantiaVolunteer @entity {
   id: ID!
-  count: BigInt!
+  tokenId: BigInt!
+  xp: BigInt!
   account: Bytes! # address
-  operator: Bytes! # address
 }

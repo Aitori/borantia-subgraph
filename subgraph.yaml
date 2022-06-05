@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.4
 schema:
   file: ./schema.graphql
 dataSources:
@@ -6,8 +6,9 @@ dataSources:
     name: Borantia
     network: mumbai
     source:
-      address: "0x3625FE1210D196463A07fA730694CBFd4b2B4B38"
+      address: "0xBDcA837987CFFdeAfdE4732506fe11B1036342e9"
       abi: Borantia
+      startBlock: 26610878
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -41,4 +42,6 @@ dataSources:
           handler: handleURI
         - event: Unpaused(address)
           handler: handleUnpaused
+        - event: ClaimedVolunteerHours(address,uint256,uint256)
+          handler: handleClaimedVolunteerHours
       file: ./src/borantia.ts
